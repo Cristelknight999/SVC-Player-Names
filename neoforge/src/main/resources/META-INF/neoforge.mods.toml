@@ -1,0 +1,47 @@
+modLoader="javafml" #mandatory
+loaderVersion="${neo_loader_version_range}" #mandatory
+license="${mod_license}"
+
+[[mods]] #mandatory
+modId="${mod_id}" #mandatory
+version="${mod_version}" #mandatory
+
+displayName="${mod_name}"
+authors="Cristelknight"
+displayURL="${homepage}"
+logoFile="pack.png"
+description= '''${mod_description}'''
+
+displayTest="IGNORE_ALL_VERSION"
+
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.10,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId="voicechat"
+mandatory=true
+versionRange="[${voicechat_version},)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="cristellib"
+type="required"
+versionRange="[${cristellib_version},)"
+ordering="NONE"
+side="BOTH"
+
+[[mixins]]
+config = "svc_player_names.mixins.json"
