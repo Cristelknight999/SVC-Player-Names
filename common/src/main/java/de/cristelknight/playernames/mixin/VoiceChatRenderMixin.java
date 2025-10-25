@@ -23,7 +23,7 @@ public class VoiceChatRenderMixin {
             locals = LocalCapture.CAPTURE_FAILHARD)
     private static void svcpn$renderIcons(GuiGraphics guiGraphics, CallbackInfo ci, ClientVoicechat client, Minecraft mc, List<PlayerState> groupMembers, int posX, int posY, float mainScale, boolean vertical, int i, PlayerState state) {
         PNConfig config = ConfigRegistry.get(PNConfig.class);
-        if(!config.alwaysShow() && !client.getTalkCache().isTalking(state.getUuid())) return;
+        if(vertical || (!config.alwaysShow() && !client.getTalkCache().isTalking(state.getUuid()))) return;
         guiGraphics.pose().pushMatrix();
 
         float scale = (float) config.scale();

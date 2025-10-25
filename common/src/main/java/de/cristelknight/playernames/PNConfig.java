@@ -2,9 +2,10 @@ package de.cristelknight.playernames;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import de.cristelknight.cristellib.config.client.simple.custom.AlphaColorField;
+
 import de.cristelknight.cristellib.config.simple.ConfigRegistry;
 import de.cristelknight.cristellib.config.simple.ConfigSettings;
+import de.cristelknight.cristellib.config.simple.custom.AlphaColorField;
 
 public record PNConfig(
         boolean alwaysShow,
