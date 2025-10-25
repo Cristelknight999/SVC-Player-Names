@@ -2,16 +2,17 @@ package de.cristelknight.playernames;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-
 import de.cristelknight.cristellib.config.simple.ConfigRegistry;
 import de.cristelknight.cristellib.config.simple.ConfigSettings;
 import de.cristelknight.cristellib.config.simple.custom.AlphaColorField;
+
 
 public record PNConfig(
         boolean alwaysShow,
         double scale,
         double xOffset,
         double yOffset,
+        boolean shadowText,
         AlphaColorField color
 ) {
 
@@ -21,7 +22,8 @@ public record PNConfig(
                     Codec.DOUBLE.fieldOf("scale").forGetter(PNConfig::scale),
                     Codec.DOUBLE.fieldOf("xOffset").forGetter(PNConfig::xOffset),
                     Codec.DOUBLE.fieldOf("yOffset").forGetter(PNConfig::yOffset),
-                    AlphaColorField.CODEC.fieldOf("color").forGetter(PNConfig::color)
+                    Codec.BOOL.fieldOf("shadowText").forGetter(PNConfig::shadowText),
+                    de.cristelknight.cristellib.config.simple.custom.AlphaColorField.CODEC.fieldOf("color").forGetter(PNConfig::color)
             ).apply(builder, PNConfig::new)
     );
 
@@ -43,6 +45,7 @@ public record PNConfig(
                     0.8d,
                     0d,
                     0d,
+                    true,
                     new AlphaColorField(255, 255, 255, 255)
             );
         }

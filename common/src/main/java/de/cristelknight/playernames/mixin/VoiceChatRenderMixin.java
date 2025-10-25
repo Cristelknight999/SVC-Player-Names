@@ -41,7 +41,7 @@ public class VoiceChatRenderMixin {
 
         float y = (((float) config.yOffset() + 6.5f) - (textHeight * scale) / 2f) / scale;
 
-        guiGraphics.drawString(mc.font, name, (int) x, (int) y, config.color().toInt(), false);
+        guiGraphics.drawString(mc.font, name, (int) x, (int) y, config.color().toInt(), config.shadowText());
         guiGraphics.pose().popMatrix();
     }
 }
