@@ -18,21 +18,21 @@ displayTest="IGNORE_ALL_VERSION"
 [[dependencies.${mod_id}]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21,)"
+versionRange = "${neo_version_range}"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.10,)"
+versionRange = "[${min_minecraft_version},)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId="voicechat"
 mandatory=true
-versionRange="[${voicechat_version},)"
+versionRange="[${min_minecraft_version}-${voicechat_version},)"
 ordering="AFTER"
 side="BOTH"
 
